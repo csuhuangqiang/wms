@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<app> 
+	<setting name="siteName" value="网易"/>  
+	<setting name="siteUrl" value="http:www.163.com"/> 
+</app>
