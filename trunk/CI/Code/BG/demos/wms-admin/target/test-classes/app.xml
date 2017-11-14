@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<app> 
-	<setting name="siteName" value="网易"/>  
-	<setting name="siteUrl" value="http:www.163.com"/> 
+<?xml version="1.0" encoding="UTF-8" ?>
+<app>
+    <setting name="siteName" value="百度"></setting>
+    <setting name="siteUrl" value="http:www.baidu.com"></setting>
 </app>

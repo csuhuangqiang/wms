@@ -1,10 +1,13 @@
 package com.rickysoft.wms;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 public class MainTest {
+    private Logger logger= Logger.getLogger(MainTest.class);
+
     @Test
     public void test() {
-        System.out.println("哈哈");
+        logger.info("哈哈");
     }
 }

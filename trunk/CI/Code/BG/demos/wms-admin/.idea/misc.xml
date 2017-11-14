@@ -11,8 +11,9 @@
     </option>
   </component>
   <component name="ProjectResources">
-    <resource url="http://mybatis.org/dtd/mybatis-3-config.dtd" location="E:/Tools/DTDS/mybatis-3-config.dtd" />
-    <resource url="http://mybatis.org/dtd/mybatis-3-mapper.dtd" location="E:/Tools/DTDS/mybatis-3-mapper.dtd" />
+    <resource url="http://mybatis.org/dtd/mybatis-3-config.dtd" location="D:/Tools/DTDS/mybatis-3-config.dtd" />
+    <resource url="http://mybatis.org/dtd/mybatis-3-mapper.dtd" location="D:/Tools/DTDS/mybatis-3-mapper.dtd" />
+    <resource url="http://www.springframework.org/schema/context/spring-context.xsd" location="D:/Tools/XSDS/spring-context.xsd.xml" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
