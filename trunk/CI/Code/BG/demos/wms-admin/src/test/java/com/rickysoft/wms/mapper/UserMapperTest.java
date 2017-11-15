@@ -1,9 +1,12 @@
 package com.rickysoft.wms.mapper;
 
 import com.github.abel533.entity.Example;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.rickysoft.wms.model.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -15,6 +18,9 @@ import java.util.List;
 public class UserMapperTest {
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private SqlSessionTemplate sqlSessionTemplate;
 
     @Test
     public void testSelect() {
@@ -52,5 +58,13 @@ public class UserMapperTest {
         user.setMobile("17666113010");
         user.setEmail("csuhuangqiang@163.com");
         userMapper.insert(user);
+    }
+
+    @Test
+    public void testSelectByPage() {
+        PageHelper.startPage(1,10);
+        List<User> users=sqlSessionTemplate.selectList("userMapper.queryAll");
+        PageInfo<User> userPageInfo=new PageInfo<User>(users);
+        System.out.println(userPageInfo.getStartRow());
     }
 }

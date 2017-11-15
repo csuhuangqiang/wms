@@ -27,13 +27,21 @@
                         </value>
                     </property>
                 </bean>
+                <bean class="com.github.pagehelper.PageHelper">
+                    <property name="properties">
+                        <value>
+                            dialect=mysql
+                            rowBoundsWithCount=true
+                        </value>
+                    </property>
+                </bean>
             </array>
         </property>
     </bean>
     <!-- 数据回话模板 -->
-    <!--<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
-        <constructor-arg index="0" ref="sqlSessionFactory"></constructor-arg>
-    </bean>-->
+    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory"/>
+    </bean>
     <!-- Mapper扫描 -->
     <bean id="mapperScanConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.rickysoft.wms.mapper"/>
