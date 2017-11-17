@@ -1,0 +1,8 @@
+mongod --dbpath "C:\Program Files\mongodb\data\db" --logpath 
+"C:\Program Files\mongodb\data\log\MongoDB.log" --install --serviceName "MongoDB"
+
+C:\ProgramData\MongoDB\Server\3.0\Data
+
+mongod --dbpath "C:\ProgramData\MongoDB\Server\3.4\Data\db" --logpath "C:\ProgramData\MongoDB\Server\3.4\Data\log\MongoDB.log" --install --serviceName "MongoDB"
+
+mongod --config "C:\ProgramData\MongoDB\Server\3.0\mongod.cfg" --install

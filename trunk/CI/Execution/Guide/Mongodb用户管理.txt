@@ -1,0 +1,85 @@
+// DbAdmin 不具备用户(获取所有、删除所有、查询单个[其他]、创建单个、删除单个[其他]、删除自身、更新单个[其他]、更新自身)权限、文档[CRUD]权限，具备用户(查询自身)权限、集合(CRUD)权限
+// DbOwner 具备用户(查询所有、删除所有、查询单个[其他]、查询自身、创建单个、删除单个[其他]、删除自身)权限、集合(CRUD)权限、文档[CRUD]权限
+// UserAdmin 不具备集合(CRUD)权限、文档[CRUD]权限，具备用户(查询所有、删除所有、查询单个[其他]、查询自身、创建单个、删除单个[其他]、删除自身)权限、集合(CRUD)权限
+// read 不具备用户(获取所有、删除所有、查询单个[其他]、创建单个、删除单个[其他]、删除自身、更新单个[其他]、更新自身)权限，具备用户(查询自身)权限、集合(R)权限、文档[CRUD]权限
+// readWrite 不具备用户(获取所有、删除所有、查询单个[其他]、创建单个、删除单个[其他]、删除自身、更新单个[其他]、更新自身)权限，具备用户(查询自身)权限、集合(CRUD)权限、文档[CRUD]权限
+
+use admin
+use mongodb_sharegog
+
+db.getUsers()
+db.dropAllUsers()
+
+db.auth('root','123456')
+db.auth('sharegogadmin','123456')
+db.auth('sharegogowner','123456')
+db.auth('sharegogua','123456')
+db.auth('sharegogr','123456')
+db.auth('sharegogw','123456')
+db.auth('sharegogrw','123456')
+
+db.getUser('root')
+db.getUser('sharegogadmin')
+db.getUser('sharegogowner')
+db.getUser('sharegogua')
+db.getUser('sharegogr')
+db.getUser('sharegogw')
+db.getUser('sharegogrw')
+
+db.dropUser('root')
+db.dropUser('sharegogadmin')
+db.dropUser('sharegogowner')
+db.dropUser('sharegogua')
+db.dropUser('sharegogr')
+db.dropUser('sharegogw')
+db.dropUser('sharegogrw')
+
+db.createUser(
+   {
+     user: "root",
+     pwd: "123456",
+     roles: [ {role:"root", db:"admin"} ]
+   }
+)
+db.createUser(
+   {
+     user: "sharegogadmin",
+     pwd: "123456",
+     roles: [ {role:"dbAdmin", db:"mongodb_sharegog"} ]
+   }
+)
+db.createUser(
+   {
+     user: "sharegogua",
+     pwd: "123456",
+     roles: [ {role:"userAdmin", db:"mongodb_sharegog"} ]
+   }
+)
+db.createUser(
+   {
+     user: "sharegogowner",
+     pwd: "123456",
+     roles: [ {role:"dbOwner", db:"mongodb_sharegog"} ]
+   }
+)
+db.createUser(
+   {
+     user: "sharegogr",
+     pwd: "123456",
+     roles: [ {role:"read", db:"mongodb_sharegog"} ]
+   }
+)
+db.createUser(
+   {
+     user: "sharegogw",
+     pwd: "123456",
+     roles: [ {role:"write", db:"mongodb_sharegog"} ]
+   }
+)
+db.createUser(
+   {
+     user: "sharegogrw",
+     pwd: "123456",
+     roles: [ {role:"readWrite", db:"mongodb_sharegog"} ]
+   }
+)
